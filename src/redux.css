@@ -1,0 +1,17 @@
+.container{
+    width: 90%;
+    margin: 40px  auto;
+    padding: 1px;
+    padding-left: 55px;
+    background-color: bisque;
+    box-shadow: 3px 2px 5px cadetblue;
+    border: 1.5px solid cornsilk;
+    color:  lightslategray;
+    text-align: center;
+}
+
+.type{
+    padding-left:100px;
+    margin: 5px;
+     
+}
