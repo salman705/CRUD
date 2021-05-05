@@ -28,9 +28,15 @@ export const fetchPostFailure= (error) => {
 export const fetchPost = () => {
     return function (dispatch) {
         dispatch(fetchPostRequest())
-        axios.post('https://rest-api-node.herokuapp.com/users', this.state)
+        axios.post('https://rest-api-node.herokuapp.com/users/create',{
+            method:'POST',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type':'application/json'
+            }
+        })
         .then(response => {
-            const posts = response.data
+             const posts =response
             dispatch(fetchPostSuccess(posts))
         })
         .catch(error => {

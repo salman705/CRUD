@@ -1,7 +1,8 @@
 
 //import { configure } from '@testing-library/dom';
 import './App.css';
-import AsyncAction from './Container/AsyncAction';
+import PostContainer from './Container/PostContainer';
+//import AsyncAction from './Container/AsyncAction';
 import GetContainer from './Container/UserContainer';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <div className="App">
       Redux Introduction
 <GetContainer/>
-<AsyncAction/>
+<PostContainer/>
      </div>
   );
 }

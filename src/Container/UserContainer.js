@@ -7,7 +7,7 @@ import {fetchUsers} from '../thunk/Get Method/ThunkActions/actionCreator'
 function GetContainer ({userData, fetchUsers}) {
     useEffect(() => {
         fetchUsers()
-    },[])
+    },[fetchUsers])
 
     return userData.loading ? (
         <h2>Loading</h2>

@@ -1,20 +1,21 @@
 import React from 'react'
 import  '../redux.css'
+import {Table} from 'reactstrap'
 
 function ReduxDisplayer(props) {
     return (
-        <div className="container">
-            <table >
-                <thead>
+        <div className="">
+            <Table >
+                <thead className="thead">
                     <tr>
-                        <th>Properties Name</th>
+                        <th>PropertiesName</th>
                         <th>Description</th>
                         <th className="type">Type</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>ID</td>
+                        <td >ID</td>
                         <td>{props.id}</td>
                         <td className="type">VarChar</td>
                     </tr>
@@ -64,7 +65,7 @@ function ReduxDisplayer(props) {
 
 
 
-            </table>
+            </Table>
          
          
          
