@@ -3,21 +3,21 @@ import axios from 'axios'
 import * as actionTypes from './PostTypes'
 
 // Goes For Get Method
-export const fetchPostRequest= () => {
+export const makePostRequest= () => {
     return {
         type: actionTypes.MAKE_POST_REQUEST
         
     }
 }
 
-export const fetchPostSuccess= (posts) => {
+export const makePostSuccess= (posts) => {
     return {
         type: actionTypes.MAKE_POST_SUCCESS,
         payload: posts
     }
 }
 
-export const fetchPostFailure= (error) => {
+export const makePostFailure= (error) => {
     return {
         type: actionTypes.MAKE_POST_FAILURE,
         payload: error
@@ -27,7 +27,7 @@ export const fetchPostFailure= (error) => {
 //export default FetchUsers
 export const fetchPost = () => {
     return function (dispatch) {
-        dispatch(fetchPostRequest())
+        dispatch(makePostRequest())
         axios.post('https://rest-api-node.herokuapp.com/users/create',{
             method:'POST',
             headers:{
@@ -37,11 +37,11 @@ export const fetchPost = () => {
         })
         .then(response => {
              const posts =response
-            dispatch(fetchPostSuccess(posts))
+            dispatch(makePostSuccess(posts))
         })
         .catch(error => {
             const errors = error.message
-            dispatch(fetchPostFailure(errors))
+            dispatch(makePostFailure(errors))
         })
     }
 }

@@ -4,7 +4,12 @@ import * as actionCreator from "../PostActions/PostTypes"
 
 const initialState = {
     loading: false,
-    posts:[],
+    posts:{
+        id:'',
+        name:'',
+        email:'',
+        password:''
+    },
     error:''
 }
 

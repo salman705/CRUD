@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import {connect} from 'react-redux'
 import { fetchPost } from '../thunk/Post Method/PostActions/PostActionCreator'
-function PostContainer({userData, fetchPost}) {
+function PostContainer({postData, fetchPost}) {
     const [name,setName]=useState('')
     const [email,setEmail]=useState('')
     const [mobile,setMobile]=useState('')
@@ -10,9 +10,8 @@ function PostContainer({userData, fetchPost}) {
     useEffect(()=>{
         fetchPost()
     },[fetchPost])
-let data = {name, email, mobile}
 const handlePostData = (e) =>{
-    data({[e.target.name]: e.target.value})
+   
 }
     
     return (
@@ -29,7 +28,7 @@ const handlePostData = (e) =>{
 
 const mapStateToProps = (state) => {
     return {
-        userData: state.post
+        postData: state.post
     }
 }
 
