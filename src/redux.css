@@ -1,12 +1,21 @@
+.div{
+    text-align: center;
+}
+.table{
+        width: 15%;
+        margin: 40px  auto;
+        padding: 1px;
+        padding-left: 55px;
+        background-color: bisque;
+        box-shadow: 3px 2px 5px cadetblue;
+        border: 1.5px solid cornsilk;
+        color:  Red;
+        text-align: center;
+    
+}
 .container{
-    width: 90%;
-    margin: 40px  auto;
-    padding: 1px;
-    padding-left: 55px;
-    background-color: bisque;
-    box-shadow: 3px 2px 5px cadetblue;
-    border: 1.5px solid cornsilk;
-    color:  lightslategray;
+    
+    color:  Red;
     text-align: center;
 }
 
@@ -26,4 +35,5 @@
 
 .thead{
     background-color: darkslategrey;
+    color: burlywood;
 }
