@@ -4,12 +4,7 @@ import * as actionCreator from "../PostActions/PostTypes"
 
 const initialState = {
     loading: false,
-    posts:{
-        id:'',
-        name:'',
-        email:'',
-        password:''
-    },
+    posts:[],
     error:''
 }
 
@@ -22,8 +17,9 @@ const postReducer = (state = initialState,action) => {
             }
         case actionCreator.MAKE_POST_SUCCESS:
             return{
+                ...state,
                 loading: false,
-                posts: action.payload,
+                posts: [...state.posts, action.payload],
                 error: ''
             }
         case actionCreator.MAKE_POST_FAILURE:
@@ -38,3 +34,4 @@ const postReducer = (state = initialState,action) => {
 }
 
 export default postReducer
+

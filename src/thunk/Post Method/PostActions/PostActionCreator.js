@@ -10,43 +10,33 @@ export const makePostRequest= () => {
     }
 }
 
-export const makePostSuccess= (posts) => {
+export const makePostSuccess= (post) => {
     return {
         type: actionTypes.MAKE_POST_SUCCESS,
-        payload: posts
+        payload: {...post}
     }
 }
 
 export const makePostFailure= (error) => {
     return {
         type: actionTypes.MAKE_POST_FAILURE,
-        payload: error
+        payload: {error}
     }
 }
 
 //export default FetchUsers
-export const fetchPost = () => {
-    return function (dispatch) {
+export const fetchPost = (obj) => {
+    return dispatch => {
         dispatch(makePostRequest())
-        axios.post('https://rest-api-node.herokuapp.com/users/create',{
-            method:'POST',
-            headers:{
-                'Accept': 'application/json',
-                'Content-Type':'application/json'
-            }
+        axios.post('https://rest-api-node.herokuapp.com/users/create', {
+        obj})
+        .then(res => {
+            console.log(res)
+            dispatch(makePostSuccess(res.data))
         })
-        .then(response => {
-             const posts =response
-            dispatch(makePostSuccess(posts))
+        .catch(err =>{
+            dispatch(makePostFailure(err.message))
         })
-        .catch(error => {
-            const errors = error.message
-            dispatch(makePostFailure(errors))
-        })
+
     }
 }
-
-
-
-
-
